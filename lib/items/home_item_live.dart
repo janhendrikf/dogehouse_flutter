@@ -20,7 +20,7 @@ class HomeItemLive extends StatelessWidget {
             ),
             child: InkWell(
               borderRadius: BorderRadius.circular(8.0),
-              onTap: onTap,
+              onTap: onTap as void Function()?,
               child: Container(
                 width: double.infinity,
                 child: Column(
@@ -32,7 +32,7 @@ class HomeItemLive extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              homeItemModel.name,
+                              homeItemModel.name!,
                               style: TextStyle(color: Palette.lightWhite, fontWeight: FontWeight.bold, fontSize: 15),
                             ),
                           ),
@@ -62,7 +62,7 @@ class HomeItemLive extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Text(
-                        homeItemModel.description,
+                        homeItemModel.description!,
                         style: TextStyle(color: Palette.lightBlue, fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                     ),
@@ -71,7 +71,7 @@ class HomeItemLive extends StatelessWidget {
                       child: Container(
                         height: 30,
                         child: ListView.builder(
-                          itemCount: homeItemModel.peoplePreviewList.length,
+                          itemCount: homeItemModel.peoplePreviewList!.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return Padding(
@@ -85,7 +85,7 @@ class HomeItemLive extends StatelessWidget {
                                   child: Padding(
                                     padding: const EdgeInsets.only(left: 10, right: 10),
                                     child: Text(
-                                      homeItemModel.peoplePreviewList[index].displayName,
+                                      homeItemModel.peoplePreviewList![index].displayName!,
                                       style: TextStyle(
                                         color: Palette.lightWhite,
                                       ),

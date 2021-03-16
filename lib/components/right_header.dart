@@ -3,7 +3,7 @@ import 'package:dogehouse_flutter/models/models.dart';
 import 'package:flutter/material.dart';
 
 class RightHeader extends StatelessWidget {
-  final BaseUser baseUser;
+  final BaseUser? baseUser;
 
   RightHeader(this.baseUser);
 
@@ -39,7 +39,7 @@ class RightHeader extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(baseUser.avatarUrl),
+                  image: NetworkImage(baseUser!.avatarUrl!),
                 ),
               ),
             ),

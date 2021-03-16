@@ -1,11 +1,11 @@
 class Room {
-  String id;
-  String name;
-  String description;
-  bool isPrivate;
-  int numPeopleInside;
-  String creatorId;
-  List<PeoplePreviewListItem> peoplePreviewList = [];
+  String? id;
+  String? name;
+  String? description;
+  bool? isPrivate;
+  int? numPeopleInside;
+  String? creatorId;
+  List<PeoplePreviewListItem>? peoplePreviewList = [];
 
   Room({this.id, this.name, this.description, this.isPrivate, this.numPeopleInside, this.creatorId, this.peoplePreviewList});
 
@@ -23,9 +23,9 @@ class Room {
 }
 
 class PeoplePreviewListItem {
-  String id;
-  String displayName;
-  int numFollowers;
+  String? id;
+  String? displayName;
+  int? numFollowers;
 
   PeoplePreviewListItem({this.id, this.displayName, this.numFollowers});
 
@@ -39,16 +39,16 @@ class PeoplePreviewListItem {
 }
 
 class BaseUser {
-  String username;
-  bool online;
-  DateTime lastOnline;
-  String id;
-  String bio;
-  String displayName;
-  String avatarUrl;
-  int numFollowing;
-  int numFollowers;
-  Room currentRoom;
+  String? username;
+  bool? online;
+  DateTime? lastOnline;
+  String? id;
+  String? bio;
+  String? displayName;
+  String? avatarUrl;
+  int? numFollowing;
+  int? numFollowers;
+  Room? currentRoom;
 
   BaseUser(
       {this.username,
@@ -81,14 +81,14 @@ class BaseUser {
 }
 
 class PaginatedBaseUsers {
-  List<BaseUser> users;
-  int nextCursor;
+  List<BaseUser>? users;
+  int? nextCursor;
 }
 
 class RoomPermissions {
-  bool askedToSpeak;
-  bool isSpeaker;
-  bool isMod;
+  bool? askedToSpeak;
+  bool? isSpeaker;
+  bool? isMod;
 
   RoomPermissions({this.askedToSpeak, this.isSpeaker, this.isMod});
 
@@ -102,36 +102,36 @@ class RoomPermissions {
 }
 
 class UserWithFollowInfo {
-  String username;
-  bool online;
-  DateTime lastOnline;
-  String id;
-  String bio;
-  String displayName;
-  String avatarUrl;
-  int numFollowing;
-  int numFollowers;
-  Room currentRoom;
+  String? username;
+  bool? online;
+  DateTime? lastOnline;
+  String? id;
+  String? bio;
+  String? displayName;
+  String? avatarUrl;
+  int? numFollowing;
+  int? numFollowers;
+  Room? currentRoom;
 
-  bool followsYou;
-  bool youAreFollowing;
+  bool? followsYou;
+  bool? youAreFollowing;
 }
 
 class RoomUser {
-  String username;
-  bool online;
-  DateTime lastOnline;
-  String id;
-  String bio;
-  String displayName;
-  String avatarUrl;
-  int numFollowing;
-  int numFollowers;
-  Room currentRoom;
+  String? username;
+  bool? online;
+  DateTime? lastOnline;
+  String? id;
+  String? bio;
+  String? displayName;
+  String? avatarUrl;
+  int? numFollowing;
+  int? numFollowers;
+  Room? currentRoom;
 
-  bool followsYou;
-  bool youAreFollowing;
-  RoomPermissions roomPermissions;
+  bool? followsYou;
+  bool? youAreFollowing;
+  RoomPermissions? roomPermissions;
 
   RoomUser(
       {this.username,
@@ -170,17 +170,17 @@ class RoomUser {
 }
 
 class CurrentRoom {
-  String id;
-  String name;
-  String description;
-  bool isPrivate;
-  int numPeopleInside;
-  String creatorId;
-  List<PeoplePreviewListItem> peoplePreviewList;
-  List<RoomUser> users;
-  Map<String, bool> muteMap;
-  Map<String, bool> activeSpeakerMap;
-  bool autoSpeaker;
+  String? id;
+  String? name;
+  String? description;
+  bool? isPrivate;
+  int? numPeopleInside;
+  String? creatorId;
+  List<PeoplePreviewListItem>? peoplePreviewList;
+  List<RoomUser>? users;
+  Map<String?, bool?>? muteMap;
+  Map<String, bool>? activeSpeakerMap;
+  bool? autoSpeaker;
 
   CurrentRoom(
       {this.id,
@@ -213,19 +213,19 @@ class CurrentRoom {
 }
 
 class WsParam {
-  String op;
+  String? op;
   dynamic d;
 }
 
 class ScheduledRoom {
-  String roomId;
-  String description;
-  DateTime scheduledFor;
-  int numAttending;
-  String name;
-  String id;
-  String creatorId;
-  BaseUser creator;
+  String? roomId;
+  String? description;
+  DateTime? scheduledFor;
+  int? numAttending;
+  String? name;
+  String? id;
+  String? creatorId;
+  BaseUser? creator;
 
   ScheduledRoom({this.roomId, this.description, this.scheduledFor, this.numAttending, this.name, this.id, this.creatorId, this.creator});
 
@@ -246,8 +246,8 @@ class ScheduledRoom {
 }
 
 class ScheduledRoomsInfo {
-  List<ScheduledRoom> scheduledRooms = [];
-  String nextCursor;
+  List<ScheduledRoom>? scheduledRooms = [];
+  String? nextCursor;
 
   ScheduledRoomsInfo({this.scheduledRooms, this.nextCursor});
 
@@ -260,8 +260,8 @@ class ScheduledRoomsInfo {
 }
 
 class PublicRoomsQuery {
-  List<Room> rooms = [];
-  int nextCursor;
+  List<Room>? rooms = [];
+  int? nextCursor;
 
   PublicRoomsQuery({this.rooms, this.nextCursor});
 

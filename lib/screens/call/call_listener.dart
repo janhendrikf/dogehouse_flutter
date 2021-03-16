@@ -28,9 +28,9 @@ class _CallListenerState extends State<CallListener> {
           ),
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return ListenerItem(model.currentRoom.users[index], false, model.currentRoom.muteMap.containsKey(model.currentRoom.users[index].id));
+              return ListenerItem(model.currentRoom!.users![index], false, model.currentRoom!.muteMap!.containsKey(model.currentRoom!.users![index].id));
             },
-            childCount: model.currentRoom.users.where((element) => model.currentRoom.activeSpeakerMap.containsKey(element.id)).length,
+            childCount: model.currentRoom!.users!.where((element) => model.currentRoom!.activeSpeakerMap!.containsKey(element.id)).length,
           ),
         ),
         SliverToBoxAdapter(
@@ -48,7 +48,7 @@ class _CallListenerState extends State<CallListener> {
           ),
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return ListenerItem(model.currentRoom.users[index], false, false);
+              return ListenerItem(model.currentRoom!.users![index], false, false);
             },
             childCount: 0,
           ),
@@ -68,9 +68,9 @@ class _CallListenerState extends State<CallListener> {
           ),
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return ListenerItem(model.currentRoom.users[index], false, false);
+              return ListenerItem(model.currentRoom!.users![index], false, false);
             },
-            childCount: model.currentRoom.users.length,
+            childCount: model.currentRoom!.users!.length,
           ),
         )
       ]);

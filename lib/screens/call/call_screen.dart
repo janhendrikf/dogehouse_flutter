@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class CallScreen extends StatefulWidget {
-  final String callID;
+  final String? callID;
 
   CallScreen(this.callID);
 

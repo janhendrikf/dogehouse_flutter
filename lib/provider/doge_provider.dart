@@ -12,16 +12,16 @@ import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class DogeProvider with ChangeNotifier {
-  WebSocketChannel channel;
-  UseSocketStatus useSocketStatus;
-  bool authGood;
+  late WebSocketChannel channel;
+  UseSocketStatus? useSocketStatus;
+  bool? authGood;
   AuthModel authModel = AuthModel();
   PublicRoomsQuery publicRoomsQuery = PublicRoomsQuery(rooms: []);
   ScheduledRoomsInfo scheduledRoomsInfo = ScheduledRoomsInfo(scheduledRooms: []);
 
-  BaseUser me;
-  Room currRoom;
-  CurrentRoom currentRoom;
+  BaseUser? me;
+  Room? currRoom;
+  CurrentRoom? currentRoom;
   List<ChatModel> currMessages = [];
   List<BaseUser> following = [];
 
@@ -127,7 +127,7 @@ class DogeProvider with ChangeNotifier {
             break;
 
           case "mute_changed":
-            currentRoom.muteMap[json["d"]["userId"]] = json["d"]["value"];
+            currentRoom!.muteMap![json["d"]["userId"]] = json["d"]["value"];
             notifyListeners();
             break;
 
@@ -240,7 +240,7 @@ class DogeProvider with ChangeNotifier {
     channel.sink.add(jsonEncode({"op": "leave_room", "d": {}}));
   }
 
-  joinRoom(String roomID) {
+  joinRoom(String? roomID) {
     channel.sink.add(jsonEncode({
       "op": "join_room",
       "d": {"roomId": roomID}

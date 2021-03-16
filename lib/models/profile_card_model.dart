@@ -1,11 +1,11 @@
 class ProfileCardModel {
-  String profilePicUrl = "";
-  String name = "";
-  String username = "";
-  String followers = "";
-  String following = "";
-  String description = "";
-  String url = "";
+  String? profilePicUrl = "";
+  String? name = "";
+  String? username = "";
+  String? followers = "";
+  String? following = "";
+  String? description = "";
+  String? url = "";
 
   ProfileCardModel({this.profilePicUrl, this.name, this.username, this.followers, this.following, this.description, this.url});
 

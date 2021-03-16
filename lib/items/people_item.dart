@@ -22,7 +22,7 @@ class PeopleItem extends StatelessWidget {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(baseUser.avatarUrl),
+                    image: NetworkImage(baseUser.avatarUrl!),
                   ),
                 ),
               ),
@@ -32,14 +32,14 @@ class PeopleItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      baseUser.displayName,
+                      baseUser.displayName!,
                       style: TextStyle(color: Palette.lightWhite, fontWeight: FontWeight.bold, fontSize: 15),
                     ),
                     if (baseUser.currentRoom != null)
                       Padding(
                         padding: const EdgeInsets.only(top: 1),
                         child: Text(
-                          baseUser.currentRoom.name,
+                          baseUser.currentRoom!.name!,
                           style: TextStyle(color: Palette.lightBlue, fontWeight: FontWeight.bold, fontSize: 13),
                         ),
                       ),

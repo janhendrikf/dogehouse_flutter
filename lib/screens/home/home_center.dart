@@ -40,14 +40,14 @@ class _HomeCenterState extends State<HomeCenter> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return HomeItemLive(model.publicRoomsQuery.rooms[index], () {
+                return HomeItemLive(model.publicRoomsQuery.rooms![index], () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CallScreen(model.publicRoomsQuery.rooms[index].id)),
+                    MaterialPageRoute(builder: (context) => CallScreen(model.publicRoomsQuery.rooms![index].id)),
                   );
                 });
               },
-              childCount: model.publicRoomsQuery.rooms.length,
+              childCount: model.publicRoomsQuery.rooms!.length,
             ),
           ),
           SliverToBoxAdapter(
@@ -63,9 +63,9 @@ class _HomeCenterState extends State<HomeCenter> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return HomeItemPlanned(model.scheduledRoomsInfo.scheduledRooms[index]);
+                return HomeItemPlanned(model.scheduledRoomsInfo.scheduledRooms![index]);
               },
-              childCount: model.scheduledRoomsInfo.scheduledRooms.length,
+              childCount: model.scheduledRoomsInfo.scheduledRooms!.length,
             ),
           ),
         ],

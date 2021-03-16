@@ -34,8 +34,11 @@ class HomeItemPlanned extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              homeItemModel.name,
-                              style: TextStyle(color: Palette.lightWhite, fontWeight: FontWeight.bold, fontSize: 15),
+                              homeItemModel.name!,
+                              style: TextStyle(
+                                  color: Palette.lightWhite,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
                             ),
                           ),
                           SizedBox.shrink(),
@@ -52,7 +55,8 @@ class HomeItemPlanned extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(left: 5),
                                 child: Text(
-                                  DateFormat('dd.MM.yyyy, kk:mm').format(homeItemModel.scheduledFor),
+                                  DateFormat('dd.MM.yyyy, kk:mm')
+                                      .format(homeItemModel.scheduledFor!),
                                   style: TextStyle(color: Palette.lightWhite),
                                 ),
                               )
@@ -64,12 +68,16 @@ class HomeItemPlanned extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Text(
-                        homeItemModel.description,
-                        style: TextStyle(color: Palette.lightBlue, fontWeight: FontWeight.bold, fontSize: 15),
+                        homeItemModel.description!,
+                        style: TextStyle(
+                            color: Palette.lightBlue,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 25),
+                      padding: const EdgeInsets.only(
+                          top: 30, left: 15, right: 15, bottom: 25),
                       child: Container(
                         height: 30,
                         child: ListView.builder(
@@ -85,9 +93,10 @@ class HomeItemPlanned extends StatelessWidget {
                                 ),
                                 child: Center(
                                   child: Padding(
-                                    padding: const EdgeInsets.only(left: 10, right: 10),
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
                                     child: Text(
-                                      homeItemModel.description[index],
+                                      homeItemModel.description![index],
                                       style: TextStyle(
                                         color: Palette.lightWhite,
                                       ),

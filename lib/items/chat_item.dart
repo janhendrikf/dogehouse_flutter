@@ -21,7 +21,7 @@ class ChatItem extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(chatModel.avatarUrl),
+                  image: NetworkImage(chatModel.avatarUrl!),
                 ),
               ),
             ),
@@ -33,7 +33,7 @@ class ChatItem extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(text: chatModel.displayName, style: TextStyle(color: Colors.blue), recognizer: TapGestureRecognizer()..onTap = () {}),
                     TextSpan(text: ': '),
-                    TextSpan(text: chatModel.tokens[0].v),
+                    TextSpan(text: chatModel.tokens![0].v),
                   ],
                 ),
               ),

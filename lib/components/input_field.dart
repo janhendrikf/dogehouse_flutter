@@ -19,7 +19,7 @@ class InputField extends StatelessWidget {
             Flexible(
               child: Container(
                 child: TextField(
-                  onSubmitted: sendMessage,
+                  onSubmitted: sendMessage as void Function(String)?,
                   textInputAction: TextInputAction.newline,
                   style: TextStyle(color: Colors.white, fontSize: 15.0),
                   controller: textEditingController,

@@ -1,11 +1,11 @@
 class ChatModel {
-  String id;
-  String avatarUrl;
-  String displayName;
-  String userId;
-  bool isWhisper;
-  DateTime sentAt;
-  List<ChatItemModel> tokens;
+  String? id;
+  String? avatarUrl;
+  String? displayName;
+  String? userId;
+  bool? isWhisper;
+  DateTime? sentAt;
+  List<ChatItemModel>? tokens;
 
   ChatModel({this.id, this.avatarUrl, this.displayName, this.userId, this.isWhisper, this.sentAt, this.tokens});
 
@@ -23,8 +23,8 @@ class ChatModel {
 }
 
 class ChatItemModel {
-  String v;
-  String t;
+  String? v;
+  String? t;
 
   ChatItemModel({this.v, this.t});
 

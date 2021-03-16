@@ -1,9 +1,9 @@
 class AuthModel {
-  String accessToken;
-  String refreshToken;
-  bool reconnectToVoice = true;
-  bool muted = false;
-  String platform = "app";
+  String? accessToken;
+  String? refreshToken;
+  bool? reconnectToVoice = true;
+  bool? muted = false;
+  String? platform = "app";
 
   AuthModel({this.accessToken, this.refreshToken, this.reconnectToVoice, this.muted, this.platform});
 

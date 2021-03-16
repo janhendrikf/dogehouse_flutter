@@ -3,7 +3,7 @@ import 'package:dogehouse_flutter/resources/palette.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
-  final BaseUser baseUser;
+  final BaseUser? baseUser;
 
   ProfileCard(this.baseUser);
 
@@ -33,7 +33,7 @@ class ProfileCard extends StatelessWidget {
                             shape: BoxShape.circle,
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(baseUser.avatarUrl),
+                              image: NetworkImage(baseUser!.avatarUrl!),
                             ),
                           ),
                         ),
@@ -46,11 +46,11 @@ class ProfileCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          baseUser.displayName,
+                          baseUser!.displayName!,
                           style: TextStyle(color: Color(0xFFdee3ea), fontWeight: FontWeight.bold, fontSize: 15),
                         ),
                         Text(
-                          baseUser.username,
+                          baseUser!.username!,
                           style: TextStyle(color: Palette.lightBlue, fontWeight: FontWeight.bold, fontSize: 13),
                         ),
                         Row(
@@ -126,7 +126,7 @@ class ProfileCard extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
                   child: RichText(
                     text: TextSpan(
-                      text: '${baseUser.numFollowers} ',
+                      text: '${baseUser!.numFollowers} ',
                       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
                       children: <TextSpan>[
                         TextSpan(
@@ -138,7 +138,7 @@ class ProfileCard extends StatelessWidget {
                           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
                         ),
                         TextSpan(
-                          text: '${baseUser.numFollowing} ',
+                          text: '${baseUser!.numFollowing} ',
                           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
                         ),
                         TextSpan(
@@ -151,7 +151,7 @@ class ProfileCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
                 child: Text(
-                  baseUser.bio,
+                  baseUser!.bio!,
                   style: TextStyle(color: Palette.lightBlue, fontWeight: FontWeight.bold, fontSize: 15),
                 ),
               ),

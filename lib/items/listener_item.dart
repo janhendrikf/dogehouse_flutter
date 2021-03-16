@@ -22,12 +22,12 @@ class ListenerItem extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(roomUser.avatarUrl),
+                  image: NetworkImage(roomUser.avatarUrl!),
                 ),
               ),
             ),
           ),
-          Text(roomUser.displayName + ' ' + (isMute ? 'M' : '')),
+          Text(roomUser.displayName! + ' ' + (isMute ? 'M' : '')),
         ],
       ),
     );
